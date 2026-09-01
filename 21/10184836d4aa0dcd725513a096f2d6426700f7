@@ -1,0 +1,45 @@
+LICENSE
+  s_25c0b5d2b71551::t_6ee3bfbedeb842 1-21
+README.md
+  s_25c0b5d2b71551::t_66e388590c9ddc 1-50
+skills/linear-feature-spec/SKILL.md
+  s_25c0b5d2b71551::t_a9dfc1698de199 1-36
+skills/linear-feature-spec/examples.md
+  s_25c0b5d2b71551::t_d815047fee755c 1-4
+skills/linear-initiative/SKILL.md
+  s_25c0b5d2b71551::t_b12f1fa4bc3bbf 1-50
+skills/linear-initiative/examples.md
+  s_25c0b5d2b71551::t_0947492e583533 1-2
+skills/linear-issues/SKILL.md
+  s_25c0b5d2b71551::t_4b7651498ab252 1-26
+skills/linear-issues/examples.md
+  s_25c0b5d2b71551::t_ca2808ea2a2dfd 1-4
+skills/linear-spec-review/SKILL.md
+  s_25c0b5d2b71551::t_121af1bc41fc02 1-15
+skills/linear-spec-review/examples.md
+  s_25c0b5d2b71551::t_684a10165882a6 1
+skills/linear-spec-router/SKILL.md
+  s_25c0b5d2b71551::t_f16524ca162d40 1-41
+skills/linear-spec-router/examples.md
+  s_25c0b5d2b71551::t_a8c881cb5c3ecd 1-6
+skills/linear-write-protocol/SKILL.md
+  s_25c0b5d2b71551::t_ea1fa6248716dc 1-28
+skills/linear-write-protocol/examples.md
+  s_25c0b5d2b71551::t_bb5bb615b7980b 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "2110184836d4aa0dcd725513a096f2d6426700f7",
+  "prompts": {},
+  "sessions": {
+    "s_25c0b5d2b71551": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "c97f0797-38af-4a8a-8832-c4cb3a89a8cb",
+        "model": "grok-4.6"
+      },
+      "human_author": "Pedro Cantidio <ppcantidio@gmail.com>"
+    }
+  }
+}
