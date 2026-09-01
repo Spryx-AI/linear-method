@@ -39,6 +39,8 @@ npx skills add Spryx-AI/linear-method --list
 | `linear-spec-review` | Point at holes. Do not rewrite the spec. |
 | `linear-write-protocol` | Draft → explicit ok → write → URLs. Shared by the write skills. |
 
+Worked examples live in `examples.md` beside each skill.
+
 ## Linear writes
 
 This pack is **method only**. It does not include a Linear MCP/plugin.
