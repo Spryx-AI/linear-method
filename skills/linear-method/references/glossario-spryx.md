@@ -60,26 +60,6 @@ muda com frequência; nunca é copiado para issue.
 **Decisões** — Tabela curta de escolhas já tomadas com a alternativa descartada
 ("soft delete, não exclusão permanente"). Serve para o engenheiro não reabrir a discussão.
 
-## Entidades do produto Spryx
-
-**System Object** — Entidade nativa do produto (Contact, Company, Conversation…) que
-existe independentemente de configuração do admin. Contrasta com **Custom Object**,
-criado pelo admin. `[CONFIRMAR: lista oficial de System Objects]`
-
-**Conversation** — System Object que representa uma conversa no Live Chat. É a exceção
-mais frequente na matriz: aceita atributos e relacionamentos, mas não tem CRUD genérico
-nem Pipeline, porque sua listagem é o Inbox. `[CONFIRMAR]`
-
-**Records / Relationships / Pipelines / Lists** — Capabilities irmãs de Custom Objects
-(instâncias, ligações entre objetos, processos com estágios, visões filtradas). Cada uma
-é um Project separado. `[CONFIRMAR]`
-
-**Studio** — Superfície de construção de agentes e flows. **Flow** tem draft e versões
-publicadas. `[CONFIRMAR: nomenclatura de versão]`
-
-**Live Chat** — Inbox omnichannel com colaboração humano-agente. Termos: fila, roteamento,
-atribuição, transbordo (handoff humano). `[CONFIRMAR]`
-
 ## Artefatos e prototipagem
 
 **Proto** — Protótipo navegável ou tela de referência. Na Spryx vem como "Paper N-M"
