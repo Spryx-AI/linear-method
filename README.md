@@ -1,8 +1,20 @@
-# Linear Method skills
+# linear-method
 
-Portable Agent Skills pack for the Linear Method: **router → initiative → feature spec → issues → review**, with a shared **write protocol**.
+An [Agent Skill](https://agentskills.io/specification) that turns product text (a spec
+pasted from Notion or Productboard, meeting notes, a request in chat) into Linear
+artifacts — Initiative, Project + Project Doc, Issues, or a readiness review — following
+the [Linear Method](https://linear.app/method) with Spryx's own conventions layered on
+top.
 
-Install with the [Vercel skills CLI](https://github.com/vercel-labs/skills). Skills follow the [Agent Skills spec](https://agentskills.io/specification).
+**What it is:** Linear Method + Spryx conventions. The Method gives the shape (owners,
+short project briefs, small concrete issues, design placeholders). Spryx adds a spec
+vocabulary the Method does not have: rule IDs (`RB-*`, `ENT-*`), design placeholders
+(`DES-*`), an exception matrix, a journey index, and a `[FALTA]` marker for anything the
+source text did not say. Both are documented in the skill; nothing is assumed to be
+universal.
+
+**What it is not:** it does not cover cycles, triage, sprint planning, or syncing issues
+with git. Those are operating concerns, not spec concerns, and other skills cover them.
 
 ## Install
 
@@ -22,30 +34,46 @@ Claude Code:
 npx skills add Spryx-AI/linear-method --agent claude-code
 ```
 
-List skills without installing:
+## Writing to Linear
 
-```bash
-npx skills add Spryx-AI/linear-method --list
+This pack is **method only**: it ships no MCP server. Install Linear's official MCP
+server (or the `linear` plugin from the Claude plugins marketplace) so the agent can
+write. The skill maps its steps onto the official server's tools (`save_project`,
+`create_document`, `save_issue`, initiative tools, `list_*`) and falls back to "draft
+only" when no Linear integration is present.
+
+The skill never writes to Linear on its own. It always drafts first, then ends with a
+closed question with lettered options (create everything / create only X / update
+`<id>` / don't write). Praise ("looks good") is not a confirmation; picking an option is.
+Every write ends with a receipt: URLs for what was created, and an explicit list of what
+was **not** written.
+
+## Layout
+
+```
+skills/linear-method/
+├── SKILL.md                 # decision table, shared principles, write protocol
+└── references/
+    ├── glossario-spryx.md   # what RB-*, DES-*, [FALTA], catálogo, matriz… mean
+    ├── workspace-spryx.md   # teams, issue prefixes, active initiatives, owners
+    ├── initiative.md
+    ├── project-spec.md
+    ├── issues.md
+    ├── review.md
+    └── examples/            # one complete paste → draft per artifact type
 ```
 
-## Skills
+The skill body and references are in Brazilian Portuguese, which is the language Spryx
+writes specs in. This README is in English because it is the install entry point.
 
-| Skill | Role |
-| --- | --- |
-| `linear-spec-router` | Classify a paste and point to the next skill. Does not write Linear. |
-| `linear-initiative` | One investment page. Not a spec or backlog. |
-| `linear-feature-spec` | One Project = one capability. Short Project description; contract in the Document. |
-| `linear-issues` | One issue = one observable behavior. Contract stays in the Project Doc. |
-| `linear-spec-review` | Point at holes. Do not rewrite the spec. |
-| `linear-write-protocol` | Draft → explicit ok → write → URLs. Shared by the write skills. |
+## Status
 
-Worked examples live in `examples.md` beside each skill.
+`references/workspace-spryx.md` and a few glossary entries are marked `[FALTA]` /
+`[CONFIRMAR]` — they encode facts about Spryx's Linear workspace that only the team can
+fill in. The skill works without them (it resolves teams and projects at runtime and
+asks when ambiguous), but it works better with them.
 
-## Linear writes
-
-This pack is **method only**. It does not include a Linear MCP/plugin.
-
-Install the official Linear MCP or plugin separately if the agent should write to Linear. This pack does not write Linear until the user says an explicit phrase listed in `linear-write-protocol` (for example `pode criar`, `ok`, `grava`, `cria só o project e o doc`, `pode atualizar <id>`, `não grava`). Vague praise such as `fica bom` / `legal` / `segue` is not confirmation.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the writing standard used in this repo.
 
 ## License
 
